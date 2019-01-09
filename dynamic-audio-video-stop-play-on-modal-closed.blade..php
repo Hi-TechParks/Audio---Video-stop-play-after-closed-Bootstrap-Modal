@@ -1,10 +1,12 @@
+<!-- Audio Player Popup Modal -->
+
 @if($audio)
 <div class="col-sm-4 text-center">
     @if(!$RecitationDetail->AUDIO_FLAG)
-        <button href="" class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top" title='কোন  অডিও নেই' disabled>  অডিও</button>
+        <button href="" class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top" title='No Audio' disabled> Audio</button>
     @else
 
-        <button type="button" class="btn btn-primary btn-sm" role="button" data-toggle="modal" data-target="#audio-{{$RecitationDetail->RECITATION_ID}}"> অডিও </button>
+        <button type="button" class="btn btn-primary btn-sm" role="button" data-toggle="modal" data-target="#audio-{{$RecitationDetail->RECITATION_ID}}"> Audio </button>
         <!-- Large modal -->
         <div class="modal fade" id="audio-{{$RecitationDetail->RECITATION_ID}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog modal-lg" role="document">
@@ -18,18 +20,17 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     @if($RecitationDetail->IMAGE_FILE_PATH !=NULL )
-                                        <img src="{{asset('bangla_abritti/uploaded_img/reciter_images/'.$RecitationDetail->IMAGE_FILE_PATH)}}" class="img-responsive center-block" onerror="this.src='/assets2/img/audio.jpg';" alt="Image" style="width: 70%; padding: 10px">
+                                        <img src="{{asset('bangla_abritti/uploaded_img/reciter_images/'.$RecitationDetail->IMAGE_FILE_PATH)}}" class="img-responsive center-block" onerror="this.src='/assets2/img/audio.jpg';" alt="Image" style="width: 70%;">
                                     @else
-                                        <img src="{{asset('bangla_abritti/uploaded_img/reciter_images/avatar.jpg')}}" class="img-responsive center-block"  onerror="this.src='/assets2/img/audio.jpg';" alt="Image" style="width: 70%; padding: 10px;">
+                                        <img src="{{asset('bangla_abritti/uploaded_img/reciter_images/avatar.jpg')}}" class="img-responsive center-block"  onerror="this.src='/assets2/img/audio.jpg';" alt="Image" style="width: 70%;">
                                     @endif
                                 </div>
 								
                                 <div class="col-md-6 text-left">
-                                    {{--<h3 style="padding: 10px">{{  $RecitationDetail->RECITER_NAME }}</h3>--}}
-									<table style="float: left; padding: 10px; margin: 10px;">
-										<tr><th>আবৃত্তিকার </th><td> &nbsp;: {{  $RecitationDetail->RECITER_NAME }}</td></tr>
-										<tr><th>কবিতা </th><td> &nbsp;: {{  $RecitationDetail->POEM_NAME }}</td></tr>
-										<tr><th>কবি </th><td> &nbsp;: {{  $RecitationDetail->AUTHOR_NAME }}</td></tr>
+									<table>
+										<tr><th> </th><td> &nbsp;: {{  $RecitationDetail->RECITER_NAME }}</td></tr>
+										<tr><th> </th><td> &nbsp;: {{  $RecitationDetail->POEM_NAME }}</td></tr>
+										<tr><th> </th><td> &nbsp;: {{  $RecitationDetail->AUTHOR_NAME }}</td></tr>
 									</table>
 							    </div>
                             </div>						
@@ -62,19 +63,24 @@
 @else
 
 <div class="col-sm-4 text-center">
-    <button href="" class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top" title='কোন অডিও নেই' disabled>  অডিও</button>
+    <button href="" class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top" title='No Audio' disabled>  Audio</button>
 </div>
 
 @endif
 
+<!-- Audio Player Popup Modal -->
+
+
+
+<!-- Youtube Video -->
+<!-- Video Player Popup Modal -->
+
 @if($vedio)
 <div class="col-sm-4 text-center">
     @if(!$RecitationDetail->VIDEO_FLAG)
-        <button href="" class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="top" title='কোন ভিডিও নেই' disabled>  ভিডিও</button>
+        <button href="" class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="top" title='No Video' disabled>  Video</button>
     @else
-        {{--<button href="/recitation/vedio/{{  $RecitationDetail->RECITATION_ID }}" class="btn btn-danger btn-sm">  ভিডিও</button>--}}
-
-        <button type="button" class="btn btn-danger btn-sm" role="button" data-toggle="modal" data-target="#vedio-{{$RecitationDetail->RECITATION_ID}}"> ভিডিও </button>
+        <button type="button" class="btn btn-danger btn-sm" role="button" data-toggle="modal" data-target="#vedio-{{$RecitationDetail->RECITATION_ID}}"> Video </button>
         <!-- Large modal -->
         <div class="modal fade" id="vedio-{{$RecitationDetail->RECITATION_ID}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog modal-lg" role="document">
@@ -105,7 +111,9 @@
 @else
 
 <div class="col-sm-4 text-center">
-    <button href="" class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="top" title='কোন ভিডিও নেই' disabled>  ভিডিও</button>
+    <button href="" class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="top" title='No Video' disabled>  Video</button>
 </div>
 
 @endif
+
+<!-- Video Player Popup Modal -->
